@@ -1,0 +1,52 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Status</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 650px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="menu container mt-5">
+            <center><h3 style="font-weight: bold;">Policy Details</h3></center>
+            <br>
+            <p style="font-weight: bold;">Policy Number : {{ policy.policy_number }}</p>
+            <p>Policy Holder : {{ owner.name }}</p>
+            <p>Vehicle Number : {{ vehicle.vehicle_number }}</p>
+            <p>Quoted Premium : ₹{{ policy.total_premium }}</p>
+            <p>Quoted IDV(Insured Declared Value) : Get Cover upto ₹{{ policy.insured_declared_value }}</p>
+            {% if policy.policy_status == 'Active' %}
+                <p style="color: darkgreen; font-weight: bold;">Policy Status : {{ policy.policy_status }}</p>
+                <!-- <center><a href="#" class="btn btn-primary">Download Policy</a></center> -->
+            {% elif policy.policy_status == 'Pay to Activate Your Policy' %}
+                <p style="font-weight: bold;">Policy Status : {{ policy.policy_status }}</p>
+                <center><a href="{%url 'premium_breakup' signed_pid%}" class="btn btn-primary">Make Payment</a></center>
+            {% elif policy.policy_status == 'Pending For Approval' %}
+                <p style="color: darkorange; font-weight: bold;">Policy Status : {{ policy.policy_status }}</p>
+            {% elif policy.policy_status == 'Rejected' %}
+                <p style="color: maroon; font-weight: bold;">Policy Status : {{ policy.policy_status }}</p>
+            {% elif policy.policy_status == 'Expired' %}
+                <p style="color: purple; font-weight: bold;">Policy Status : {{ policy.policy_status }}</p>
+                <center><a href="{%url 'add_ons' signed_vid%}" class="btn btn-primary">Renew Policy</a></center>           
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>

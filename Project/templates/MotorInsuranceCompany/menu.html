@@ -1,0 +1,88 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Options</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  {% block styles %}
+  <style>
+    .card {
+      margin: 10px;
+      background-color: rgba(0, 0, 0, 0.5); /* Purple color */
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .card a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #563d7c; /* Darker purple for links */
+      border-radius: 5px;
+    }
+
+    .card a:hover {
+      background-color: black; /* Darker shade on hover */
+    }
+  </style>
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Create a Policy Proposal</h2>
+            <a href="/vehicle_details" class="btn btn-primary">Create Proposal</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Track Policy</h2>
+            <a href="/details_to_track_policy" class="btn btn-primary">Track/View Your Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Make Payment</h2>
+            <a href="/details_to_make_payment" class="btn btn-primary">Make Paymen For Your Insurance Policy</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Renew Policy</h2>
+            <a href="/details_to_renew_policy" class="btn btn-primary">Renew Your Insurance Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Raise a Claim</h2>
+            <a href="/file_for_claim" class="btn btn-primary">Raise Claim</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h2>Track Status of Claim</h2>
+            <a href="/details_to_track_claim" class="btn btn-primary">Track Claim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File For Claim</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .form-group {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div id="menu1" class="menu container mt-5">
+            <br>
+            <h2>File For Claim</h2>
+            <form action="/file_for_claim" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="vehicleNumber">Vehicle Number:</label>
+                    <input type="text" id="vehicleNumber" class="form-control" name="vehicleNumber" required>
+                </div>
+                {% if error %}
+                    <p style="color: purple;">{{error}}</p>
+                {% endif %}
+                <div class="form-group">
+                    <label for="reasonForClaim">Reason for Claim:</label>
+                    <select id="reasonForClaim" class="form-control" name="reasonForClaim" required>
+                    <option value="Accident">Accident</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Natural Disaster">Natural Disaster</option>
+                    <option value="Fire Damage">Fire Damage</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionOfIncident">Description of Incident:</label>
+                    <input type="text" id="descriptionOfIncident" class="form-control" name="descriptionOfIncident" required>
+                </div>
+                <div class="form-group">
+                    <label for="claimantBankName">Claimant's Bank Name:</label>
+                    <input type="text" id="claimantBankName" class="form-control" name="claimantBankName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="claimantAccountNumber">Claimant's Account Number:</label>
+                    <input type="text" id="claimantAccountNumber" class="form-control" name="claimantAccountNumber" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    {% endblock %}
+</body>
+</html>

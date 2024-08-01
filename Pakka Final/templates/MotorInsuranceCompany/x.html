@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Policy Invoice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles go here */
+        /* Adjust as needed */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Background style */
+        }
+        .invoice-container {
+            max-width: 800px; /* Adjust as needed to fit A4 width */
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            color: #000; /* Text color */
+            position: relative;
+        }
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .invoice-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .invoice-details {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa; /* Section background color */
+        }
+        .invoice-details h5 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .invoice-details p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .company-email {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Company name at the top center -->
+        <div class="invoice-header">
+            <h1 class="invoice-title">Motor Shield Insurance Company</h1>
+        </div>
+        <!-- Policy and vehicle details section -->
+        <div class="row">
+            <!-- Policy details section -->
+            <div class="col-md-6">
+                <div class="invoice-details">
+                    <h5>Policy Details</h5>
+                    <!-- Insert policy details here -->
+                    <p><strong>Policy Number:</strong> POL123456789</p>
+                    <p><strong>Start Date:</strong> January 1, 2023</p>
+                    <p><strong>End Date:</strong> January 1, 2024</p>
+                </div>
+            </div>
+            <!-- Vehicle details section -->
+            <div class="col-md-6">
+                <div class="invoice-details">
+                    <h5>Vehicle Details</h5>
+                    <!-- Insert vehicle details here -->
+                    <p><strong>Vehicle Type:</strong> Car</p>
+                    <p><strong>Make:</strong> Toyota</p>
+                    <p><strong>Model:</strong> Corolla</p>
+                    <p><strong>Year of Purchase:</strong> 2022</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Policy holder details section -->
+            <div class="col-md-6">
+                <div class="invoice-details">
+                    <h5>Policy Holder Details</h5>
+                    <!-- Insert policy holder details here -->
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <p><strong>Phone:</strong> +1234567890</p>
+                    <p><strong>Address:</strong> 123 Main St, City, Country</p>
+                </div>
+            </div>
+            <!-- Premium breakup section -->
+            <div class="col-md-6">
+                <div class="invoice-details">
+                    <h5>Premium Breakup</h5>
+                    <!-- Insert premium breakup details here -->
+                    <p><strong>Base Premium:</strong> $500</p>
+                    <p><strong>Additional Coverage:</strong> $200</p>
+                    <p><strong>Total Premium:</strong> $700</p>
+                </div>
+            </div>
+        </div>
+      <br></br>
+        <div class="company-email">
+            <p><strong>Email:</strong> info@motorshield.com</p>
+        </div>
+    </div>
+</body>
+</html>

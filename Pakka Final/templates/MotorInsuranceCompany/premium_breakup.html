@@ -1,0 +1,40 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Breakup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 650px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="menu container mt-5">
+            <center><h3 style="font-weight: bold;">Premium Breakup</h3></center>
+            <br>
+            <p style="font-weight: bold;">Policy Number : {{ policy.policy_number }}</p>
+            <p>Base Premium : ₹{{ policy.base_premium }}</p>
+            <p>Personal Accident Premium : ₹{{ policy.personal_accident_premium }}</p>
+            <p>Passenger Cover Premium : ₹{{ policy.passenger_cover_premium }}</p>
+            <p>Breakdown Assistance Premium : ₹{{ policy.breakdown_assistance_premium }}</p>
+            <p style="color: maroon; font-weight: bold;">Total Premium to be Paid: ₹{{ policy.total_premium }}</p>
+            <center><a href="{%url 'payment_done' signed_pid%}" class="btn btn-primary">Pay ₹{{ policy.total_premium }}</a></center>           
+            </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Submitted </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 650px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="menu container mt-5">
+            <center><h3 style="font-weight: bold;">Claim Submitted.</h3></center>
+            <br>
+            <p>Your Claim has been filed and is 'Pending' from our end.</p>
+            <p>We will get back to you once we verify the details.</p>
+            <p>You can track the status of your Claim by clicking the button below :</p>
+            <br>
+            <center><a href="{%url 'track_claim' signed_vid%}" class="btn btn-primary">Track Claim</a></center>
+            <br>
+        </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Motor Shield</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #56065868; /* Transparent background with dark shade */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: black; /* White text color */
+            line-height: 1;
+        }
+        
+        li{
+            color: black;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'MotorInsuranceCompany/index.html' %}
+    {% block content %}
+    <br>
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to Motor Shield, your trusted partner in motor vehicle insurance.</p>
+            <p>Motor Shield has been providing reliable insurance coverage for vehicles of all types for over a decade. Our mission is to protect your vehicle and provide you with peace of mind on the road.</p>
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li>Competitive premiums</li><br>
+                <li>24/7 customer support</li><br>
+                <li>Wide range of coverage options</li><br>
+                <li>Easy online policy management</li><br>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="container">
+            <br>
+            <h2 class="text-center mb-4">Sign In</h2>
+
+            <form action="/signin" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter your password">
+                </div>
+                {% if error %}
+                    <p style="color: purple;">{{error}}</p>
+                {% endif %}
+                <center><button type="submit" class="btn btn-primary btn-block">Sign In</button></center>
+            </form>
+            <br>
+        </div>
+    {% endblock %}
+</body>
+</html>

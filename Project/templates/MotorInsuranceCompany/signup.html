@@ -1,0 +1,51 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+        {% endif %}
+        <div class="container">
+            <br>
+            <h3 class="text-center mb-4">Sign Up</h3>
+
+            <form action="/signup" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" Required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" Required>
+                    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Create a Password" Required>
+                    <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
+                </div>
+                <br>
+                <center><button type="submit" class="btn btn-primary btn-block">Sign Up</button></center>
+            </form>
+            <br>
+        </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Status</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 650px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        p {
+            font-size: 17px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="menu container mt-5">
+            <center><h3 style="font-weight: bold;">Claim Details</h3></center>
+            <br>
+            <p style="font-weight: bold;">Claim ID : {{ claim.id }}</p>
+            <p>Policy Number : {{ policy.policy_number }}</p>
+            <p>Vehicle Number : {{ vehicle.vehicle_number }}</p>
+            {% if claim.claim_status == 'Settled' %}
+                <p style="color: darkgreen; font-weight: bold;">Claim Status : {{ claim.claim_status }}</p>
+                <p style="font-weight: bold;">The Claim Amount has been transferred to your Bank Account.</p>
+            {% elif claim.claim_status == 'Pending' %}
+                <p style="color: darkorange; font-weight: bold;">Claim Status : {{ claim.claim_status }}</p>
+            {% elif claim.claim_status == 'Rejected' %}
+                <p style="color: maroon; font-weight: bold;">Claim Status : {{ claim.claim_status }}</p>
+            {% elif claim.claim_status == 'Approved' %}
+                <p style="color: purple; font-weight: bold;">Claim Status : {{ claim.claim_status }}</p>
+                <p style="font-weight: bold;">The Claim Amount is in Transit, you will receive it shortly.</p>
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>

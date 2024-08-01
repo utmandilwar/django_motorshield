@@ -1,0 +1,45 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Claim</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .form-group {
+            margin-bottom: 5px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div id="menu1" class="menu container mt-5">
+            <br>
+            <center><h2>Track Claim</h2></center>
+            <br>
+            <form action="/details_to_track_claim" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="vnumber">Enter the Vehicle Number :</label>
+                    <input type="text" id="vnumber" class="form-control" name="vnumber" required>
+                </div>
+                {% if error %}
+                    <p style="color: purple;">{{error}}</p>
+                {% endif %}
+                <div class="form-group">
+                    <center><button type="submit" class="btn btn-primary btn-block">Track</button></center>
+                </div>
+    {% endblock %}
+</body>
+</html>

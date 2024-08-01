@@ -1,0 +1,62 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block styles %}
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .insurance-types {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .insurance-type {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background-color: #56065868;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .insurance-type img {
+            width: 375px;
+            height: 211px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    
+    {% block content %}
+        <div class="container">
+            <h1><center>Welcome to Motor Shield Insurance</center></h1>
+        
+            <div class="insurance-types">
+                <div class="insurance-type">
+                    <img src="{% static 'images/two-wheeler.jpg' %}" alt="Two Wheeler">
+                    <h2>Two Wheeler</h2>
+                    <p>Get insurance for your motorcycles and scooters.</p>
+                </div>
+                <div class="insurance-type">
+                    <img src="{% static 'images/four-wheeler.jpg' %}" alt="Four Wheeler">
+                    <h2>Four Wheeler</h2>
+                    <p>Protect your cars with our comprehensive insurance plans.</p>
+                </div>
+                <div class="insurance-type">
+                    <img src="{% static 'images/commercial-vehicle.jpg' %}" alt="Commercial Vehicle">
+                    <h2>Commercial Vehicle</h2>
+                    <p>Insurance solutions for trucks, buses, and other commercial vehicles.</p>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

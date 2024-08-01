@@ -1,0 +1,53 @@
+{% extends 'MotorInsuranceCompany/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Ons</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% block styles %}
+        <style>
+            .container {
+            max-width: 450px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        .form-group {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+        </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="menu container mt-5">
+            <br>
+            <h2>Select the Add-Ons</h2>
+            <form action="{%url 'add_ons' signed_vid%}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="checkbox" id="personal_accident" name="personal_accident" value="11">
+                    <label for="personal_accident">Personal Accident Cover: ₹11/month</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="passenger_cover" name="passenger_cover" value="21">
+                    <label for="passenger_cover">Passenger Cover: ₹21 per-month</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="breakdown_assistance" name="breakdown_assistance" value="3">
+                    <label for="breakdown_assistance">Breakdown Assistance: ₹3 per-month</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
